@@ -1,0 +1,277 @@
+Dokumentacja kodu cs aplikacji Popular Conversions autorstwa Jaros³awa Gaw³a 10953
+
+Aplikacja pozwala na przeliczanie popularnych miar u¿ywanych w róznych krajach .
+
+Przeliczenie stopni fahrenheita na celcjusza. Przeliczenie stopni celcjusza na fahrenheita.
+Przeliczenie cali na centymetry. Przeliczenie centymetry na cali.
+Przeliczenie funtów na kilogramy. Przeliczenie kilogramów na funty.
+Przeliczenie stóp na metry. Przeliczenie metrów na stopy.
+Przeliczenie mil na kilometry. Przeliczenie kilometrów na mile.
+Przeliczenie koni mechanicznych na kilowaty. Przeliczenie kilowatów na konie mechaniczne
+
+
+
+namespace PopularConversion10953
+{
+    /// <summary>
+    /// Logika interakcji dla klasy MainWindow.xaml
+    /// </summary>
+    public partial class MainWindow : Window
+    {
+
+ Zadeklarowane zmiennych typu double aby mozliwe bylo wprowadzenie dokladnych danych.
+        
+        double enterF;
+        double c;
+
+        double enterC;
+        double f;
+
+        double enterIn;
+        double cm;
+
+        double enterCm;
+        double i;
+
+        double enterLbs;
+        double kg;
+
+        double enterKg;
+        double lbs;
+
+        double enterFt;
+        double m;
+
+        double enterM;
+        double ft;
+
+        double enterMi;
+        double km;
+
+        double enterKm;
+        double mi;
+
+        double enterKm1;
+        double kw;
+
+        double enterKw;
+        double km1;
+
+Zmienna typu string w celu wyœwietlania komunikatu w momencie wprowadzenia zlego formatu danych przez uzytkownika.
+
+        string error = " Ups...Something went wrong... Remember to use only digits(0-9) and ',' sign. " +
+            "     Example's: '19,60' , '7,007' , '203' , '2098'  ,  '70,4' - etc.  ";
+
+Metody
+
+public void FtoC_Button_Click(object sender, RoutedEventArgs e)  funkcja która po wciœniêciu przycisku o nazwie FtoC_Button_Click
+                                                                 wywo³uje metode- Przeliczenie stopni fahrenheita na celcjusza. 
+        {
+            try                                                  Próbuje wykonaæ polecenie w klamrach poni¿ej
+            {
+                enterF = double.Parse(EnterF.Text);              zmienna enterF przyjmuje wartoœæ podan¹ przez u¿ytkownika i zmienia j¹ z stringa na double
+                c = 5.0 / 9 * (enterF - 32);                     zmienna c przyjmuje wartoœæ równ¹ 5.0 / 9 * (enterF - 32) <--- wzór na przeliczenie stopni fahrenheita na celcjusza
+
+                MessageBox.Show($"F'-> C' = {c}' ");             MessageBox wyœwietla wiadomoœæ tekstow¹ F'-> C' = {c}' gdzie c jest przeliczon¹ temperatur¹ fahrenheita na celcjusza
+            }
+            catch                                                W razie b³êdnej wartoœci podanej przez u¿ytkownika(wpisanie liter lub innych znaków ni¿ "," )...
+            {
+                MessageBox.Show(error);                          ...zostaje wywolane okno z informacj¹ zadeklarowan¹ w zmiennej string error.
+            }
+        }
+
+        public void CtoF_Button_Click(object sender, RoutedEventArgs e) funkcja która po wciœniêciu przycisku o nazwie CtoF_Button_Click
+                                                                        wywo³uje metode- Przeliczenie stopni celcjusza na fahrenheita.
+        {
+            try                                                         Próbuje wykonaæ polecenie w klamrach poni¿ej
+            {
+                enterC = double.Parse(EnterC.Text);                     zmienna enterC przyjmuje wartoœæ podan¹ przez u¿ytkownika i zmienia j¹ z stringa na double
+                f = 32 + 9.0 / 5 * (enterC);                            zmienna f przyjmuje wartoœæ równ¹ 32 + 9.0 / 5 * (enterC) <--- wzór na przeliczenie stopni celcjusza na fahrenheita
+
+
+                MessageBox.Show($"C'-> F' = {f}' ");                   MessageBox wyœwietla wiadomoœæ tekstow¹ C'-> F' = {f}' gdzie f jest przeliczon¹ temperatur¹ fahrenheita na celcjusza
+            }
+
+            catch                                                      W razie b³êdnej wartoœci podanej przez u¿ytkownika(wpisanie liter lub innych znaków ni¿ "," )...
+            {
+                MessageBox.Show(error);                               ...zostaje wywolane okno z informacj¹ zadeklarowan¹ w zmiennej string error.
+            }
+        }
+    
+        public void IntoCm_Button_Click(object sender, RoutedEventArgs e) funkcja która po wciœniêciu przycisku o nazwie IntoCm_Button_Click
+         }                                                                 wywo³uje metode- Przeliczenie cali na centymetry.
+            
+            try                                                           Próbuje wykonaæ polecenie w klamrach poni¿ej                  
+            {
+                enterIn = double.Parse(EnterIn.Text);                     zmienna enterIn przyjmuje wartoœæ podan¹ przez u¿ytkownika i zmienia j¹ z stringa na double
+                cm = enterIn * 2.54;                                      zmienna cm przyjmuje wartoœæ równ¹  enterIn * 2.54; <--- wzór na przeliczenie cali na centymetry
+
+                MessageBox.Show($"Inches to centimeters = {cm} cm ");     MessageBox wyœwietla wiadomoœæ tekstow¹  "Inches to centimeters = {cm} cm " gdzie {cm} jest przeliczon¹ wartoœci¹ cali na centymetry
+            }
+            catch                                                          W razie b³êdnej wartoœci podanej przez u¿ytkownika(wpisanie liter lub innych znaków ni¿ "," )...
+            {
+                MessageBox.Show(error);                                   ...zostaje wywolane okno z informacj¹ zadeklarowan¹ w zmiennej string error.
+            }
+        }
+
+        public void CmtoIn_Button_Click(object sender, RoutedEventArgs e) Funkcja która po wciœniêciu przycisku o nazwie CmtoIn_Button_Click
+        {                                                                 wywo³uje metode- Przeliczenie centymetry na cali.
+            
+            try                                                           Próbuje wykonaæ polecenie w klamrach poni¿ej
+            {
+                enterCm = double.Parse(EnterCm.Text);                     Zmienna enterCm przyjmuje wartoœæ podan¹ przez u¿ytkownika i zmienia j¹ z stringa na double
+                i = enterCm * 0.39370079;                                 Zmienna i przyjmuje wartoœæ równ¹  enterCm * 0.39370079; <--- wzór na przeliczenie centymetrów na cale
+
+                MessageBox.Show($"Centimeters to inches  = {i} In ");     MessageBox wyœwietla wiadomoœæ tekstow¹  "Centimeters to inches  = {i} In  " gdzie {i} jest przeliczon¹ wartoœci¹ centymetrów na cale
+            }
+
+            catch                                                          W razie b³êdnej wartoœci podanej przez u¿ytkownika(wpisanie liter lub innych znaków ni¿ "," )...
+            {
+                MessageBox.Show(error);                                   ...zostaje wywo³ane okno z informacj¹ zadeklarowan¹ w zmiennej string error.
+            }
+        }
+
+        public void LbstoKg_Button_Click(object sender, RoutedEventArgs e) Funkcja która po wciœniêciu przycisku o nazwie LbstoKg_Button_Click
+        {                                                                  wywo³uje metode- Przeliczenie funtów na kilogramy.                                
+           
+            try                                                            Próbuje wykonaæ polecenie w klamrach poni¿ej
+            {
+                enterLbs = double.Parse(EnterLbs.Text);                    Zmienna enterLbs przyjmuje wartoœæ podan¹ przez u¿ytkownika i zmienia j¹ z stringa na double
+                kg = enterLbs * 0.45359237;                                Zmienna kg przyjmuje wartoœæ równ¹  enterLbs * 0.45359237 <--- wzór na przeliczenie funtów na kilogramy.
+
+                MessageBox.Show($"Pounds to Kilograms  = {kg} kg ");       MessageBox wyœwietla wiadomoœæ tekstow¹ "Pounds to Kilograms  = {kg} kg " gdzie {kg} jest przeliczon¹ wartoœci¹ funtów nakilogramy
+            }
+
+            catch                                                          W razie b³êdnej wartoœci podanej przez u¿ytkownika(wpisanie liter lub innych znaków ni¿ "," )...
+            {
+                MessageBox.Show(error);                                    ...zostaje wywo³ane okno z informacj¹ zadeklarowan¹ w zmiennej string error.
+            }
+        }
+
+        public void KgtoLbs_Button_Click(object sender, RoutedEventArgs e) Funkcja która po wciœniêciu przycisku o nazwie KgtoLbs_Button_Click
+        {                                                                  wywo³uje metode- Przeliczenie kilogramów na funty.
+           
+            try                                                            Próbuje wykonaæ polecenie w klamrach poni¿ej
+            {
+                enterKg = double.Parse(EnterKg.Text);                      Zmienna enterKg przyjmuje wartoœæ podan¹ przez u¿ytkownika i zmienia j¹ z stringa na double
+                lbs = enterKg * 2.20462;                                   Zmienna kg przyjmuje wartoœæ równ¹  enterKg * 2.20462 <--- wzór na przeliczenie kilogramów na funty.
+
+                MessageBox.Show($"Kilograms to Pounds  = {lbs} lbs ");     MessageBox wyœwietla wiadomoœæ tekstow¹ "Kilograms to Pounds  = {lbs} lbs " gdzie {lbs} jest przeliczon¹ wartoœci¹ kilogramów na funty
+            }
+
+            catch                                                          W razie b³êdnej wartoœci podanej przez u¿ytkownika(wpisanie liter lub innych znaków ni¿ "," )...
+            {
+                MessageBox.Show(error);                                    ...zostaje wywo³ane okno z informacj¹ zadeklarowan¹ w zmiennej string error.
+            }
+        }
+
+        public void FttoM_Button_Click(object sender, RoutedEventArgs e)  Funkcja która po wciœniêciu przycisku o nazwie FttoM_Button_Click 
+        {                                                                 wywo³uje metode- Przeliczenie stóp na metry.
+
+            try                                                           Próbuje wykonaæ polecenie w klamrach poni¿ej
+            {
+                enterFt = double.Parse(EnterFt.Text);                     Zmienna enterFt przyjmuje wartoœæ podan¹ przez u¿ytkownika i zmienia j¹ z stringa na double
+                m = enterFt * 0.3048;                                     Zmienna m przyjmuje wartoœæ równ¹ enterFt * 0.3048  <--- wzór na przeliczenie stóp na metry
+
+                MessageBox.Show($"Feets to meters  = {m} meters ");        MessageBox wyœwietla wiadomoœæ tekstow¹ "Feets to meters  = {m} meters " gdzie {m} jest przeliczon¹ wartoœci¹ stóp na metry
+            }
+
+            catch                                                          W razie b³êdnej wartoœci podanej przez u¿ytkownika(wpisanie liter lub innych znaków ni¿ "," )...
+            {
+                MessageBox.Show(error);                                    ...zostaje wywo³ane okno z informacj¹ zadeklarowan¹ w zmiennej string error.
+            }
+        }
+
+        public void MtoFt_Button_Click(object sender, RoutedEventArgs e)  Funkcja która po wciœniêciu przycisku o nazwie MtoFt_Button_Click
+        {                                                                 wywo³uje metode- Przeliczenie metrów na stopy
+
+            try                                                           Próbuje wykonaæ polecenie w klamrach poni¿ej
+            {
+                enterM = double.Parse(EnterM.Text);                       Zmienna enterM przyjmuje wartoœæ podan¹ przez u¿ytkownika i zmienia j¹ z stringa na double
+                ft = enterM * 3.28084;                                    Zmienna ft przyjmuje wartoœæ równ¹ enterM * 3.28084 <--- wzór na przeliczenie metrów na stopy
+
+                MessageBox.Show($"Meters to feets  = {ft} feets ");       MessageBox wyœwietla wiadomoœæ tekstow¹ "Meters to feets  = {ft} feets " gdzie {ft} jest przeliczon¹ wartoœci¹ metrów na stopy
+            }
+
+            catch                                                         W razie b³êdnej wartoœci podanej przez u¿ytkownika(wpisanie liter lub innych znaków ni¿ "," )...
+            {
+                MessageBox.Show(error);                                   ...zostaje wywo³ane okno z informacj¹ zadeklarowan¹ w zmiennej string error.
+            }
+        }
+
+        public void MitoKm_Button_Click(object sender, RoutedEventArgs e) Funkcja która po wciœniêciu przycisku o nazwie MitoKm_Button_Click
+        {                                                                 wywo³uje metode- Przeliczenie mil na kilometry.
+
+            try                                                           Próbuje wykonaæ polecenie w klamrach poni¿ej
+            {
+                enterMi = double.Parse(EnterMi.Text);                     Zmienna enterMi przyjmuje wartoœæ podan¹ przez u¿ytkownika i zmienia j¹ z stringa na double
+                km = enterMi * 1.609344;                                  Zmienna km przyjmuje wartoœæ równ¹ enterMi * 1.609344 <--- wzór na przeliczenie mil l¹dowych na kilometry
+
+
+                MessageBox.Show($"Miles to kilometers  = {km} kilometers "); MessageBox wyœwietla wiadomoœæ tekstow¹ "Miles to kilometers  = {km} kilometers " gdzie {km} jest przeliczon¹ wartoœci¹ mil na kilometry
+            }
+
+            catch                                                         W razie b³êdnej wartoœci podanej przez u¿ytkownika(wpisanie liter lub innych znaków ni¿ "," )...
+            {
+                MessageBox.Show(error);                                   ...zostaje wywo³ane okno z informacj¹ zadeklarowan¹ w zmiennej string error.
+            }
+        }
+
+        public void KmtoMi_Button_Click(object sender, RoutedEventArgs e) Funkcja która po wciœniêciu przycisku o nazwie KmtoMi_Button_Click
+        {                                                                 wywo³uje metode- Przeliczenie kilometrów na mile.
+   
+            try                                                           Próbuje wykonaæ polecenie w klamrach poni¿ej
+            {
+                enterKm = double.Parse(EnterKm.Text);                     Zmienna enterKm przyjmuje wartoœæ podan¹ przez u¿ytkownika i zmienia j¹ z stringa na double
+                mi = enterKm / 1.609344;                                  Zmienna mi przyjmuje wartoœæ równ¹ enterKm / 1.609344<--- wzór na przeliczenie kilometrów na mile l¹dowe
+
+                MessageBox.Show($"Kilometers to miles  = {mi} miles'");    MessageBox wyœwietla wiadomoœæ tekstow¹ "Kilometers to miles  = {mi} miles'" gdzie {mi} jest przeliczon¹ wartoœci¹ kilometrów na mile l¹dowe
+            }
+
+            catch                                                         W razie b³êdnej wartoœci podanej przez u¿ytkownika(wpisanie liter lub innych znaków ni¿ "," )...
+            {
+                MessageBox.Show(error);                                   ...zostaje wywo³ane okno z informacj¹ zadeklarowan¹ w zmiennej string error.
+            }
+        }
+
+        public void KmtoKW_Button_Click(object sender, RoutedEventArgs e) Funkcja która po wciœniêciu przycisku o nazwie KmtoKW_Button_Click
+        {                                                                 wywo³uje metode-Przeliczenie koni mechanicznych na kilowaty
+
+            try                                                           Próbuje wykonaæ polecenie w klamrach poni¿ej
+            {
+                enterKm1 = double.Parse(EnterKm1.Text);                   Zmienna enterKm1 przyjmuje wartoœæ podan¹ przez u¿ytkownika i zmienia j¹ z stringa na double
+                kw = enterKm1 / 1.36;                                     Zmienna kw przyjmuje wartoœæ równ¹ enterKm1 / 1.36 <--- wzór na przeliczenie koni mechanicznych na kilowaty
+
+                MessageBox.Show($"Km to KW  = {kw} KW ");                 MessageBox wyœwietla wiadomoœæ tekstow¹ "Km to KW  = {kw} KW " gdzie {kw} jest przeliczon¹ wartoœci¹ koni mechanicznych na kilowaty
+            }
+
+            catch                                                         W razie b³êdnej wartoœci podanej przez u¿ytkownika(wpisanie liter lub innych znaków ni¿ "," )...
+            {
+                MessageBox.Show(error);                                   ...zostaje wywo³ane okno z informacj¹ zadeklarowan¹ w zmiennej string error.
+            }
+        }
+
+        public void KWtoKm_Button_Click(object sender, RoutedEventArgs e) Funkcja która po wciœniêciu przycisku o nazwie KWtoKm_Button_Click
+        {                                                                 wywo³uje metode- Przeliczenie kilowatów na konie mechaniczne
+
+            try                                                           Próbuje wykonaæ polecenie w klamrach poni¿ej
+            {
+                enterKw = double.Parse(EnterKW.Text);                     Zmienna enterKw przyjmuje wartoœæ podan¹ przez u¿ytkownika i zmienia j¹ z stringa na double
+                km1 = enterKw * 1.36;                                     Zmienna kw przyjmuje wartoœæ równ¹ enterKw * 1.36 <--- wzór na przeliczenie kilowatów na konie mechaniczne
+
+                MessageBox.Show($"KW to Km  = {km1} Km ");                 MessageBox wyœwietla wiadomoœæ tekstow¹ "KW to Km  = {km1} Km " gdzie {km1} jest przeliczon¹ wartoœci¹ kilowatów na konie mechaniczne
+            }
+
+             catch                                                         W razie b³êdnej wartoœci podanej przez u¿ytkownika(wpisanie liter lub innych znaków ni¿ "," )...
+            {
+                MessageBox.Show(error);                                    ...zostaje wywo³ane okno z informacj¹ zadeklarowan¹ w zmiennej string error.
+            }
+            }
+        
+        public void Exit_Button_Click(object sender, RoutedEventArgs e)                       Funkcja która po wciœniêciu przycisku o nazwie Exit_Button_Click
+        {                                                                                     wywo³uje metode
+
+        MessageBox.Show($"Thank you for using our application. The Application is closing");  MessageBox wyœwietla wiadomoœæ tekstow¹ "Thank you for using our application. The Application is closing"
+
+        this.Close();                                                                         Zamyka aplikacjê
+        }
