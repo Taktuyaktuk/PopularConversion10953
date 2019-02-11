@@ -1,0 +1,271 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
+
+namespace PopularConversion10953
+{
+    /// <summary>
+    /// Logika interakcji dla klasy MainWindow.xaml
+    /// </summary>
+    public partial class MainWindow : Window
+    {
+        double enterF;
+        double c;
+
+        double enterC;
+        double f;
+
+        double enterIn;
+        double cm;
+
+        double enterCm;
+        double i;
+
+        double enterLbs;
+        double kg;
+
+        double enterKg;
+        double lbs;
+
+        double enterFt;
+        double m;
+
+        double enterM;
+        double ft;
+
+        double enterMi;
+        double km;
+
+        double enterKm;
+        double mi;
+
+        double enterKm1;
+        double kw;
+
+        double enterKw;
+        double km1;
+
+        string error = " Ups...Something went wrong... Remember to use only digits(0-9) and ',' sign. " +
+            "     Example's: '19,60' , '7,007' , '203' , '2098'  ,  '70,4' - etc.  ";
+
+
+        public MainWindow()
+        {
+            InitializeComponent();
+            this.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+        }
+
+        public void Window_PreviewMouseMove(object sender, MouseEventArgs e)
+        {
+
+        }
+
+        public void FtoC_Button_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                enterF = double.Parse(EnterF.Text);
+                c = 5.0 / 9 * (enterF - 32);
+
+                MessageBox.Show($"F'-> C' = {c}' ");
+            }
+            catch
+            {
+                MessageBox.Show(error);
+            }
+        }
+
+        public void CtoF_Button_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                enterC = double.Parse(EnterC.Text);
+                f = 32 + 9.0 / 5 * (enterC);
+
+                MessageBox.Show($"C'-> F' = {f}' ");
+            }
+
+            catch
+            {
+                MessageBox.Show(error);
+            }
+        }
+    
+        public void IntoCm_Button_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                enterIn = double.Parse(EnterIn.Text);
+                cm = enterIn * 2.54;
+
+                MessageBox.Show($"Inches to centimeters = {cm} cm ");
+            }
+            catch
+            {
+                MessageBox.Show(error);
+            }
+        }
+
+        public void CmtoIn_Button_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                enterCm = double.Parse(EnterCm.Text);
+                i = enterCm * 0.39370079;
+
+                MessageBox.Show($"Centimeters to inches  = {i} In ");
+            }
+
+            catch
+            {
+                MessageBox.Show(error);
+            }
+        }
+
+        public void LbstoKg_Button_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                enterLbs = double.Parse(EnterLbs.Text);
+                kg = enterLbs * 0.45359237;
+
+                MessageBox.Show($"Pounds to Kilograms  = {kg} kg ");
+            }
+
+            catch
+            {
+                MessageBox.Show(error);
+            }
+        }
+
+        public void KgtoLbs_Button_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                enterKg = double.Parse(EnterKg.Text);
+                lbs = enterKg * 2.20462;
+
+                MessageBox.Show($"Kilograms to Pounds  = {lbs} lbs ");
+            }
+
+            catch
+            {
+                MessageBox.Show(error);
+            }
+        }
+
+        public void FttoM_Button_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                enterFt = double.Parse(EnterFt.Text);
+                m = enterFt * 0.3048;
+
+                MessageBox.Show($"Feets to meters  = {m} meters ");
+            }
+
+            catch
+            {
+                MessageBox.Show(error);
+            }
+        }
+
+        public void MtoFt_Button_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                enterM = double.Parse(EnterM.Text);
+                ft = enterM * 3.28084;
+
+                MessageBox.Show($"Meters to feets  = {ft} feets ");
+            }
+
+            catch
+            {
+                MessageBox.Show(error);
+            }
+        }
+
+        public void MitoKm_Button_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                enterMi = double.Parse(EnterMi.Text);
+                km = enterMi * 1.609344;
+
+                MessageBox.Show($"Miles to kilometers  = {km} kilometers ");
+            }
+
+            catch
+            {
+                MessageBox.Show(error);
+            }
+        }
+
+        public void KmtoMi_Button_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                enterKm = double.Parse(EnterKm.Text);
+                mi = enterKm / 1.609344;
+
+                MessageBox.Show($"Kilometers to miles  = {mi} miles'");
+            }
+
+            catch
+            {
+                MessageBox.Show(error);
+            }
+        }
+
+        public void KmtoKW_Button_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                enterKm1 = double.Parse(EnterKm1.Text);
+                kw = enterKm1 / 1.36;
+
+                MessageBox.Show($"Km to KW  = {kw} KW ");
+            }
+
+            catch
+            {
+                MessageBox.Show(error);
+            }
+        }
+
+        public void KWtoKm_Button_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                enterKw = double.Parse(EnterKW.Text);
+                km1 = enterKw * 1.36;
+
+                MessageBox.Show($"KW to Km  = {km1} Km ");
+            }
+
+             catch
+            {
+                MessageBox.Show(error);
+            }
+        }
+
+        public void Exit_Button_Click(object sender, RoutedEventArgs e)
+        {
+        MessageBox.Show($"Thank you for using our application. The Application is closing");
+
+        this.Close();
+        }
+    }
+}
